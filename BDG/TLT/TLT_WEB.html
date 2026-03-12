@@ -72,24 +72,38 @@
 
         /* --- CONTAINER --- */
         .container {
-            max-width: 1000px; margin: -50px auto 40px; background: var(--white);
-            padding: 50px 30px; border-radius: 30px; box-shadow: var(--shadow); position: relative; z-index: 100;
+            max-width: 1000px; 
+            margin: -50px auto 50px; /* Tạo khoảng cách dưới rõ ràng */
+            background: var(--white);
+            padding: 50px 30px; 
+            border-radius: 30px; 
+            box-shadow: var(--shadow); 
+            position: relative; 
+            z-index: 100;
+            display: block; /* Đảm bảo container là khối đặc */
+            clear: both;
         }
+        
         h2 { color: var(--dark-red); text-align: center; text-transform: uppercase; margin-bottom: 30px; font-weight: 700; margin-top: 40px;}
         h2::after { content: ""; display: block; width: 60px; height: 3px; background: var(--primary-gold); margin: 12px auto; }
         .main-p { margin-bottom: 25px; text-align: justify; color: #444; }
         
         .highlight-box { background: #f9f4eb; border-left: 5px solid var(--primary-gold); padding: 25px; margin: 30px 0; border-radius: 0 15px 15px 0; font-style: italic;}
         
-        /* Video Container */
         .video-wrapper {
             position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; 
             border-radius: 20px; box-shadow: var(--shadow); background-color: #000; margin: 40px 0;
         }
 
         /* --- GRID --- */
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 30px; }
-        .stat-link { text-decoration: none; color: inherit; }
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 15px; 
+            margin-top: 30px;
+            width: 100%;
+        }
+        .stat-link { text-decoration: none; color: inherit; display: block; }
         .stat-item {
             background: #fff; padding: 25px 15px; border-radius: 20px; text-align: center; border: 1px solid #eee;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03); height: 100%; display: flex; flex-direction: column; justify-content: center;
@@ -101,8 +115,13 @@
         .arch-card { background: linear-gradient(to bottom, #ffffff, #fffcf7) !important; border: 1px solid rgba(197, 160, 89, 0.2) !important; }
         .arch-icon { font-size: 2rem; margin-bottom: 10px; filter: sepia(1) saturate(2); }
 
-        footer { text-align: center; padding: 60px 20px; background: #1a1a1a; color: #999; margin-top: 0; }
-        @media (max-width: 768px) { .hero-content h1 { font-size: 1.8rem; } .container { padding: 40px 20px; } }
+        footer { text-align: center; padding: 60px 20px; background: #1a1a1a; color: #999; width: 100%; position: relative; z-index: 10; clear: both; }
+        
+        @media (max-width: 768px) { 
+            .hero-content h1 { font-size: 1.8rem; } 
+            .container { padding: 40px 20px; width: 95%; margin-left: auto; margin-right: auto; } 
+            .stats-grid { grid-template-columns: repeat(2, 1fr); } /* Trên mobile chia 2 cột cho đẹp */
+        }
     </style>
 </head>
 <body>
