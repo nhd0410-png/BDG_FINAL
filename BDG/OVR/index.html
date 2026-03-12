@@ -17,10 +17,7 @@
             --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        * { 
-            box-sizing: border-box;
-            transition: all 0.3s ease; 
-        }
+        * { box-sizing: border-box; transition: all 0.3s ease; }
 
         body {
             margin: 0;
@@ -105,7 +102,6 @@
             background-size: cover;
             display: flex; align-items: center; justify-content: center;
             text-align: center; color: white;
-            margin-bottom: 0;
         }
 
         .hero-content h1 {
@@ -119,12 +115,9 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: shine 3s linear infinite;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
         }
 
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
+        @keyframes shine { to { background-position: 200% center; } }
 
         .hero-subtitle {
             color: var(--primary-gold);
@@ -133,7 +126,6 @@
             margin-top: 15px;
             font-size: 1rem;
             display: block;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         /* --- CONTAINER --- */
@@ -173,10 +165,20 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: #555;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.02);
         }
 
-        /* --- BATTLE CARDS --- */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin: 40px 0;
+            background: #000;
+        }
+
+        /* --- GRID SYSTEM --- */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -196,7 +198,6 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         .stat-item:hover {
@@ -205,93 +206,28 @@
             box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15);
         }
 
-        .stat-item b {
-            display: block;
-            color: var(--dark-red);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
+        .stat-item b { display: block; color: var(--dark-red); font-size: 1.5rem; margin-bottom: 10px; }
         .stat-item small { font-size: 1rem; color: #666; font-weight: 500; }
+        .btn-detail { margin-top: 20px; color: var(--primary-gold); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
 
-        .btn-detail {
-            margin-top: 20px;
-            color: var(--primary-gold);
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-        }
+        footer { text-align: center; padding: 60px 20px; background: #1a1a1a; color: #999; }
 
-        footer { 
-            text-align: center; 
-            padding: 60px 20px; 
-            background: #1a1a1a; 
-            color: #999; 
-            margin-top: 0;
-        }
+        .arch-custom-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
+        .arch-card { padding: 25px 15px !important; border: 1px solid rgba(197, 160, 89, 0.2) !important; }
+        .arch-icon { font-size: 2rem; margin-bottom: 15px; filter: sepia(1) saturate(2); }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 2rem; }
-            .hero-subtitle { font-size: 0.8rem; letter-spacing: 4px; }
             .container { padding: 40px 20px; margin-top: -30px; }
-            h2 { font-size: 1.5rem; }
-        }
-        .arch-custom-grid {
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .arch-card {
-            padding: 25px 15px !important;
-            background: linear-gradient(to bottom, #ffffff, #fffcf7);
-            border: 1px solid rgba(197, 160, 89, 0.2) !important;
-        }
-
-        .arch-card b {
-            font-size: 1.1rem !important;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .arch-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            filter: sepia(1) saturate(2);
-        }
-
-        .arch-card:hover {
-            background: #fffaf0 !important;
-            border-color: var(--primary-gold) !important;
-        }
-
-        /* --- VIDEO WRAPPER --- */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            background-color: #000;
-            margin: 30px 0;
         }
     </style>
 </head>
 <body>
 
     <nav class="header-nav">
-        <div class="logo-fixed">
-            <img src="LOGO.png" alt="Logo Bạch Đằng Giang">
-        </div>
+        <div class="logo-fixed"><img src="LOGO.png" alt="Logo"></div>
         <div class="nav-title">Di tích Bạch Đằng Giang</div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     </nav>
 
     <div class="menu-overlay" id="menuOverlay">
@@ -309,6 +245,7 @@
     </section>
 
     <div class="container">
+        
         <div data-aos="fade-up">
             <h2>Tổng Quan Di Tích</h2>
             <p class="main-p">Khu di tích <strong>Bạch Đằng Giang</strong> nằm dưới chân núi Phượng Hoàng thuộc dãy Tràng Kênh (thị trấn Minh Đức, huyện Thủy Nguyên, Hải Phòng), cách trung tâm thành phố khoảng 20 km.</p>
@@ -318,14 +255,9 @@
             "Đây là quần thể văn hóa – lịch sử gắn với những chiến thắng vang dội trên sông Bạch Đằng và là nơi tưởng niệm các vị anh hùng dân tộc đã viết nên những trang sử vàng chói lọi."
         </div>
 
-        <div class="video-container" data-aos="zoom-in">
-            <video 
-                style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" 
-                controls 
-                playsinline
-                preload="metadata">
+        <div class="video-wrapper" data-aos="zoom-in">
+            <video style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" controls playsinline preload="metadata">
                 <source src="https://www.dropbox.com/scl/fi/fv2zwtsqkenvasju6vie7/T-ng-quan.mp4?rlkey=n1d91gn77xizdaau75dd9r2t6&st=cj47f9hz&raw=1" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ xem video này.
             </video>
         </div>
 
@@ -342,7 +274,6 @@
                     <div class="btn-detail">Đại phá quân Nam Hán →</div>
                 </div>
             </a>
-            
             <a href="../LDH/LDH_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="200">
                 <div class="stat-item">
                     <b>Năm 981</b>
@@ -350,7 +281,6 @@
                     <div class="btn-detail">Phá Tống bình Chiêm →</div>
                 </div>
             </a>
-            
             <a href="../TQT/THT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="300">
                 <div class="stat-item">
                     <b>Năm 1288</b>
@@ -360,81 +290,33 @@
             </a> 
         </div>
 
-        <div style="margin-top: 60px;">
-            <div data-aos="fade-up">
-                <p class="main-p" style="text-align: center;">Không chỉ là một 'bảo tàng lịch sử' ngoài trời, Bạch Đằng Giang còn là điểm đến tâm linh hội tụ những công trình kiến trúc truyền thống đặc sắc. Mời bạn cùng khám phá các không gian thờ tự và những biểu tượng văn hóa tiêu biểu nằm trong lòng di tích</p>
-                <h2>Kiến Trúc & Tâm Linh</h2>
-            </div>
-
+        <div style="margin-top: 50px;" data-aos="fade-up">
+            <p class="main-p" style="text-align: center;">Không chỉ là một 'bảo tàng lịch sử' ngoài trời, Bạch Đằng Giang còn là điểm đến tâm linh hội tụ những công trình kiến trúc truyền thống đặc sắc.</p>
+            <h2>Kiến Trúc & Tâm Linh</h2>
+            
             <div class="stats-grid arch-custom-grid">
-                <a href="../SoV/SoV_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-item arch-card">
-                        <div class="arch-icon">🏛️</div>
-                        <b>Quảng trường chiến thắng</b>
-                        <div class="btn-detail">Xem chi tiết</div>
-                    </div>
-                </a>
-
-                <a href="../HCM/HCM_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-item arch-card">
-                        <div class="arch-icon">🇻🇳</div>
-                        <b>Đền thờ Hồ Chí Minh</b>
-                        <div class="btn-detail">Xem chi tiết</div>
-                    </div>
-                </a>
-
-                <a href="../TMOM/TMOM.html" class="stat-link" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-item arch-card">
-                        <div class="arch-icon">🌸</div>
-                        <b>Đền thờ Mẫu</b>
-                        <div class="btn-detail">Xem chi tiết</div>
-                    </div>
-                </a>
-
-                <a href="../TLT/TLT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="400">
-                    <div class="stat-item arch-card">
-                        <div class="arch-icon">⛩️</div>
-                        <b>Trúc Lâm Tự Tràng Kênh</b>
-                        <div class="btn-detail">Xem chi tiết</div>
-                    </div>
-                </a>
-
-                <a href="../HTS/HTS_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="500">
-                    <div class="stat-item arch-card">
-                        <div class="arch-icon">📜</div>
-                        <b>Bia Hịch Tướng Sĩ</b>
-                        <div class="btn-detail">Xem chi tiết</div>
-                    </div>
-                </a>
+                <a href="../SoV/SoV_WEB.html" class="stat-link"><div class="stat-item arch-card"><div class="arch-icon">🏛️</div><b>Quảng trường chiến thắng</b><div class="btn-detail">Xem chi tiết</div></div></a>
+                <a href="../HCM/HCM_WEB.html" class="stat-link"><div class="stat-item arch-card"><div class="arch-icon">🇻🇳</div><b>Đền thờ Hồ Chí Minh</b><div class="btn-detail">Xem chi tiết</div></div></a>
+                <a href="../TMOM/TMOM.html" class="stat-link"><div class="stat-item arch-card"><div class="arch-icon">🌸</div><b>Đền thờ Mẫu</b><div class="btn-detail">Xem chi tiết</div></div></a>
+                <a href="../TLT/TLT_WEB.html" class="stat-link"><div class="stat-item arch-card"><div class="arch-icon">⛩️</div><b>Trúc Lâm Tự Tràng Kênh</b><div class="btn-detail">Xem chi tiết</div></div></a>
+                <a href="../HTS/HTS_WEB.html" class="stat-link"><div class="stat-item arch-card"><div class="arch-icon">📜</div><b>Bia Hịch Tướng Sĩ</b><div class="btn-detail">Xem chi tiết</div></div></a>
             </div>
         </div>
 
         <div class="footer-note" data-aos="fade-up" style="text-align: center; padding: 20px; background: #f9f6f0; border-radius: 15px; color: #777; margin-top: 40px;">
-            Năm 2020, khu di tích đã chính thức được công nhận là <strong>Di tích lịch sử quốc gia</strong>, trở thành điểm đến tâm linh và giáo dục truyền thống hàng đầu tại Hải Phòng.
+            Năm 2020, khu di tích đã chính thức được công nhận là <strong>Di tích lịch sử quốc gia</strong>.
         </div>
+
     </div> <footer>
         <p>Dự án Bạch Đằng Giang & Công Nghệ Số &copy; 2026</p>
-        <p style="font-size: 0.9rem; color: #bbb; margin-bottom: 5px;">
-            Nhóm: <strong>KIẾN TẬP SINH THPT TRẦN NGUYÊN HÃN ĐẠI HỌC HẢI PHÒNG</strong>
-        </p>
-        <p style="font-size: 0.8rem; color: #888; margin-bottom: 15px;">
-            Thành viên: Đỗ Phạm Mai Phương, Bùi Thị Minh Thư, Đỗ Minh Ngọc, <br>
-            Nguyễn Thị Thanh Tâm, Phạm Đoàn Duy Khánh, Ngô Thị Diễm Quỳnh và Nguyễn Hữu Đức
-        </p>
-        <p style="font-size: 0.75rem; color: #555; margin-top: 10px;">Gìn giữ giá trị lịch sử ngàn đời cho thế hệ mai sau</p>
+        <p style="font-size: 0.9rem; color: #bbb;">Nhóm: <strong>KIẾN TẬP SINH THPT TRẦN NGUYÊN HÃN ĐẠI HỌC HẢI PHÒNG</strong></p>
+        <p style="font-size: 0.8rem; color: #888;">Thành viên: Đỗ Phạm Mai Phương, Bùi Thị Minh Thư, Đỗ Minh Ngọc, Nguyễn Thị Thanh Tâm, Phạm Đoàn Duy Khánh, Ngô Thị Diễm Quỳnh và Nguyễn Hữu Đức</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ 
-            duration: 1000, 
-            once: true,
-            offset: 50
-        });
-        
-        function toggleMenu() {
-            document.getElementById('menuOverlay').classList.toggle('active');
-        }
+        AOS.init({ duration: 1000, once: true, offset: 50 });
+        function toggleMenu() { document.getElementById('menuOverlay').classList.toggle('active'); }
     </script>
 </body>
 </html>
