@@ -139,10 +139,10 @@
         /* --- CONTAINER --- */
         .container {
             max-width: 1000px;
-            margin: -40px auto 0;
+            margin: -40px auto 40px;
             background: var(--white);
             padding: 50px 25px;
-            border-radius: 30px 30px 0 0;
+            border-radius: 30px;
             box-shadow: var(--shadow);
             position: relative;
             z-index: 100;
@@ -175,18 +175,6 @@
             color: #555;
             box-shadow: 5px 5px 15px rgba(0,0,0,0.02);
         }
-
-        /* --- IMG WRAPPER (SỬA ĐỂ GIẢM KÍCH THƯỚC 50%) --- */
-        .img-wrapper { 
-            width: 100%; 
-            max-width: 500px; /* Giới hạn chiều rộng còn 50% của container 1000px */
-            border-radius: 20px; 
-            overflow: hidden; 
-            margin: 40px auto; /* Căn giữa */
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
-        }
-        .img-wrapper img { width: 100%; display: block; transition: 0.5s; }
-        .img-wrapper:hover img { transform: scale(1.03); }
 
         /* --- BATTLE CARDS --- */
         .stats-grid {
@@ -250,34 +238,46 @@
             h2 { font-size: 1.5rem; }
         }
         .arch-custom-grid {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Tự động chia cột linh hoạt */
-        gap: 25px;
-    }
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
 
-    .arch-card {
-        padding: 25px 15px !important;
-        background: linear-gradient(to bottom, #ffffff, #fffcf7);
-        border: 1px solid rgba(197, 160, 89, 0.2) !important;
-    }
+        .arch-card {
+            padding: 25px 15px !important;
+            background: linear-gradient(to bottom, #ffffff, #fffcf7);
+            border: 1px solid rgba(197, 160, 89, 0.2) !important;
+        }
 
-    .arch-card b {
-        font-size: 1.1rem !important; /* Chữ nhỏ hơn tiêu đề trận đánh một chút để phân cấp */
-        min-height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        .arch-card b {
+            font-size: 1.1rem !important;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .arch-icon {
-        font-size: 2rem;
-        margin-bottom: 15px;
-        filter: sepia(1) saturate(2); /* Tạo hiệu ứng màu hơi cổ kính cho emoji */
-    }
+        .arch-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            filter: sepia(1) saturate(2);
+        }
 
-    .arch-card:hover {
-        background: #fffaf0 !important;
-        border-color: var(--primary-gold) !important;
-    }
+        .arch-card:hover {
+            background: #fffaf0 !important;
+            border-color: var(--primary-gold) !important;
+        }
+
+        /* --- VIDEO WRAPPER --- */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            background-color: #000;
+            margin: 30px 0;
+        }
     </style>
 </head>
 <body>
@@ -318,17 +318,16 @@
             "Đây là quần thể văn hóa – lịch sử gắn với những chiến thắng vang dội trên sông Bạch Đằng và là nơi tưởng niệm các vị anh hùng dân tộc đã viết nên những trang sử vàng chói lọi."
         </div>
 
-    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 15px; box-shadow: var(--shadow); background-color: #000;">
-        <video 
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" 
-            controls 
-            playsinline
-            preload="metadata">
-            <source src="https://www.dropbox.com/scl/fi/fv2zwtsqkenvasju6vie7/T-ng-quan.mp4?rlkey=n1d91gn77xizdaau75dd9r2t6&st=cj47f9hz&raw=1" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ xem video này.
-        </video>
-    </div>
-</div>
+        <div class="video-container" data-aos="zoom-in">
+            <video 
+                style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" 
+                controls 
+                playsinline
+                preload="metadata">
+                <source src="https://www.dropbox.com/scl/fi/fv2zwtsqkenvasju6vie7/T-ng-quan.mp4?rlkey=n1d91gn77xizdaau75dd9r2t6&st=cj47f9hz&raw=1" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ xem video này.
+            </video>
+        </div>
 
         <div data-aos="fade-up">
             <p class="main-p">Khu vực này cũng là nơi phát hiện di chỉ khảo cổ Tràng Kênh có niên đại khoảng 3.500 năm, cung cấp nhiều tư liệu quan trọng về thời kỳ đầu dựng nước và giữ nước. Khu di tích được xây dựng từ năm 2008 đến 2018 với nhiều công trình kiến trúc truyền thống như đền thờ các danh nhân, chùa Trúc Lâm Tràng Kênh, bảo tàng chiến thắng và Quảng trường Chiến thắng hùng vĩ.</p>
@@ -360,59 +359,60 @@
                 </div>
             </a> 
         </div>
-<div class="container" style="margin-top: 40px; padding-top: 20px;">
-    <div data-aos="fade-up">
-        <main-p>Không chỉ là một 'bảo tàng lịch sử' ngoài trời, Bạch Đằng Giang còn là điểm đến tâm linh hội tụ những công trình kiến trúc truyền thống đặc sắc. Mời bạn cùng khám phá các không gian thờ tự và những biểu tượng văn hóa tiêu biểu nằm trong lòng di tích</main-p>
-        <h2>Kiến Trúc & Tâm Linh</h2>
-    </div>
 
-    <div class="stats-grid arch-custom-grid">
-        <a href="../SoV/SoV_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-item arch-card">
-                <div class="arch-icon">🏛️</div>
-                <b>Quảng trường chiến thắng</b>
-                <div class="btn-detail">Xem chi tiết</div>
+        <div style="margin-top: 60px;">
+            <div data-aos="fade-up">
+                <p class="main-p" style="text-align: center;">Không chỉ là một 'bảo tàng lịch sử' ngoài trời, Bạch Đằng Giang còn là điểm đến tâm linh hội tụ những công trình kiến trúc truyền thống đặc sắc. Mời bạn cùng khám phá các không gian thờ tự và những biểu tượng văn hóa tiêu biểu nằm trong lòng di tích</p>
+                <h2>Kiến Trúc & Tâm Linh</h2>
             </div>
-        </a>
 
-        <a href="../HCM/HCM_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-item arch-card">
-                <div class="arch-icon">🇻🇳</div>
-                <b>Đền thờ Hồ Chí Minh</b>
-                <div class="btn-detail">Xem chi tiết</div>
-            </div>
-        </a>
+            <div class="stats-grid arch-custom-grid">
+                <a href="../SoV/SoV_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-item arch-card">
+                        <div class="arch-icon">🏛️</div>
+                        <b>Quảng trường chiến thắng</b>
+                        <div class="btn-detail">Xem chi tiết</div>
+                    </div>
+                </a>
 
-        <a href="../TMOM/TMOM.html" class="stat-link" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-item arch-card">
-                <div class="arch-icon">🌸</div>
-                <b>Đền thờ Mẫu</b>
-                <div class="btn-detail">Xem chi tiết</div>
-            </div>
-        </a>
+                <a href="../HCM/HCM_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-item arch-card">
+                        <div class="arch-icon">🇻🇳</div>
+                        <b>Đền thờ Hồ Chí Minh</b>
+                        <div class="btn-detail">Xem chi tiết</div>
+                    </div>
+                </a>
 
-        <a href="../TLT/TLT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="400">
-            <div class="stat-item arch-card">
-                <div class="arch-icon">⛩️</div>
-                <b>Trúc Lâm Tự Tràng Kênh</b>
-                <div class="btn-detail">Xem chi tiết</div>
-            </div>
-        </a>
+                <a href="../TMOM/TMOM.html" class="stat-link" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-item arch-card">
+                        <div class="arch-icon">🌸</div>
+                        <b>Đền thờ Mẫu</b>
+                        <div class="btn-detail">Xem chi tiết</div>
+                    </div>
+                </a>
 
-        <a href="../HTS/HTS_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="500">
-            <div class="stat-item arch-card">
-                <div class="arch-icon">📜</div>
-                <b>Bia Hịch Tướng Sĩ</b>
-                <div class="btn-detail">Xem chi tiết</div>
+                <a href="../TLT/TLT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-item arch-card">
+                        <div class="arch-icon">⛩️</div>
+                        <b>Trúc Lâm Tự Tràng Kênh</b>
+                        <div class="btn-detail">Xem chi tiết</div>
+                    </div>
+                </a>
+
+                <a href="../HTS/HTS_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="500">
+                    <div class="stat-item arch-card">
+                        <div class="arch-icon">📜</div>
+                        <b>Bia Hịch Tướng Sĩ</b>
+                        <div class="btn-detail">Xem chi tiết</div>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
-</div>
-        <div class="footer-note" data-aos="fade-up" style="text-align: center; padding: 20px; background: #f9f6f0; border-radius: 15px; color: #777;">
-            Năm 2020, khu di tích đã chính thức được công nhận là <strong>Di tích lịch sử quốc gia</strong>, trở thành điểm đến tâm linh và giáo dục truyền thống hàng đầu tại Hải Phòng.
         </div>
 
-    <footer>
+        <div class="footer-note" data-aos="fade-up" style="text-align: center; padding: 20px; background: #f9f6f0; border-radius: 15px; color: #777; margin-top: 40px;">
+            Năm 2020, khu di tích đã chính thức được công nhận là <strong>Di tích lịch sử quốc gia</strong>, trở thành điểm đến tâm linh và giáo dục truyền thống hàng đầu tại Hải Phòng.
+        </div>
+    </div> <footer>
         <p>Dự án Bạch Đằng Giang & Công Nghệ Số &copy; 2026</p>
         <p style="font-size: 0.9rem; color: #bbb; margin-bottom: 5px;">
             Nhóm: <strong>KIẾN TẬP SINH THPT TRẦN NGUYÊN HÃN ĐẠI HỌC HẢI PHÒNG</strong>
@@ -423,6 +423,7 @@
         </p>
         <p style="font-size: 0.75rem; color: #555; margin-top: 10px;">Gìn giữ giá trị lịch sử ngàn đời cho thế hệ mai sau</p>
     </footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ 
@@ -436,7 +437,4 @@
         }
     </script>
 </body>
-
 </html>
-
-
