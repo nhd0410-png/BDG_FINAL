@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hoàng Đế Lê Đại Hành - Bạch Đằng Giang</title>
+    <title>Đức Vương Ngô Quyền - Bạch Đằng Giang</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
@@ -28,7 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* --- MENU OVERLAY ĐỒNG BỘ --- */
+        /* --- MENU OVERLAY SIÊU ĐẸP --- */
         .menu-overlay {
             position: fixed; 
             top: 0; 
@@ -78,12 +78,11 @@
             background: rgba(255,255,255,0.05);
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER & NÚT MENU --- */
         .header-nav {
             position: fixed; top: 0; left: 0; width: 100%; padding: 12px 20px;
             display: flex; justify-content: space-between; align-items: center; z-index: 2000;
-            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); 
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(197, 160, 89, 0.2);
         }
         .logo-fixed { width: 45px; height: 45px; border-radius: 50%; overflow: hidden; border: 2px solid var(--primary-gold); background: white; }
         .logo-fixed img { width: 100%; height: 100%; object-fit: contain; }
@@ -91,13 +90,13 @@
         .menu-toggle {
             cursor: pointer; width: 40px; height: 40px; background-color: var(--dark-red);
             border-radius: 8px; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; gap: 5px; border: 1px solid rgba(197, 160, 89, 0.3);
+            align-items: center; gap: 5px; transition: 0.3s;
         }
         .menu-toggle span { display: block; width: 22px; height: 2px; background-color: var(--primary-gold); border-radius: 2px; }
 
         /* --- HERO --- */
         .hero {
-            height: 50vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../OVR/gate1.jpg') no-repeat center center;
+            height: 50vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('gate1.jpg') no-repeat center center;
             background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; color: white;
         }
         .hero-content h1 {
@@ -108,7 +107,7 @@
         }
         @keyframes shine { to { background-position: 200% center; } }
 
-        /* --- CONTAINER --- */
+        /* --- CONTENT --- */
         .container {
             max-width: 900px; margin: -50px auto 0; background: var(--white);
             padding: 50px 30px; border-radius: 30px 30px 0 0; box-shadow: var(--shadow); position: relative; z-index: 100;
@@ -116,26 +115,34 @@
         h2 { color: var(--dark-red); text-align: center; text-transform: uppercase; margin-bottom: 30px; font-weight: 700; }
         h2::after { content: ""; display: block; width: 60px; height: 3px; background: var(--primary-gold); margin: 12px auto; }
         
-        .main-p { margin-bottom: 25px; text-align: justify; color: #444; }
+        p { margin-bottom: 20px; text-align: justify; }
 
-        .img-box { width: 100%; max-width: 600px; border-radius: 20px; overflow: hidden; margin: 35px auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .img-box img { width: 100%; display: block; transition: 0.5s; }
-        .img-box:hover img { transform: scale(1.03); }
+        .img-box { width: 100%; border-radius: 20px; overflow: hidden; margin: 35px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .img-box img { width: 100%; display: block; }
 
-        .highlight-quote { font-style: italic; border-left: 5px solid var(--dark-red); padding: 25px; background: #fffaf2; margin: 30px 0; border-radius: 0 15px 15px 0; line-height: 1.8; color: #555; }
+        .highlight-box {
+            background: #fffaf2;
+            border-left: 5px solid var(--primary-gold);
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+        }
 
         /* --- STATS GRID --- */
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 50px; }
         .stat-link { text-decoration: none; color: inherit; }
         .stat-item {
-            background: #fff; padding: 35px 25px; border-radius: 20px; text-align: center; border: 1px solid #eee;
+            background: #fff; padding: 30px 20px; border-radius: 20px; text-align: center; border: 1px solid #eee;
             box-shadow: 0 5px 15px rgba(0,0,0,0.03); height: 100%; display: flex; flex-direction: column; justify-content: center;
         }
-        .stat-item:hover { transform: translateY(-10px); border-color: var(--primary-gold); box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15); }
-        .stat-item b { display: block; color: var(--dark-red); font-size: 1.4rem; margin-bottom: 10px; }
-        .stat-item small { font-size: 1rem; color: #666; font-weight: 500; }
-        .btn-detail { margin-top: 15px; color: var(--primary-gold); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
+        .stat-item:hover { transform: translateY(-10px); border-color: var(--primary-gold); box-shadow: 0 15px 35px rgba(197, 160, 89, 0.15); }
+        .stat-item b { display: block; color: var(--dark-red); font-size: 1.4rem; margin-bottom: 8px; }
+        .stat-item small { color: #666; font-weight: 500; }
+        .btn-detail { margin-top: 15px; color: var(--primary-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
 
+        footer { text-align: center; padding: 50px 20px; background: #1a1a1a; color: #777; margin-top: 60px; }
+        
+        .arch-custom-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
         .arch-card {
             padding: 25px 15px !important;
             background: linear-gradient(to bottom, #ffffff, #fffcf7);
@@ -144,16 +151,16 @@
         .arch-card b { font-size: 1.1rem !important; min-height: 50px; display: flex; align-items: center; justify-content: center; }
         .arch-icon { font-size: 2rem; margin-bottom: 15px; filter: sepia(1) saturate(2); }
         .arch-card:hover { background: #fffaf0 !important; border-color: var(--primary-gold) !important; }
-
-        footer { text-align: center; padding: 60px 20px; background: #1a1a1a; color: #999; margin-top: 60px; }
-        
-        @media (max-width: 768px) { .hero-content h1 { font-size: 1.8rem; } .container { padding: 30px 20px; } }
     </style>
 </head>
 <body>
     <nav class="header-nav">
         <div class="logo-fixed"><img src="LOGO.png" alt="Logo"></div>
-        <div style="color: var(--dark-red); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Lê Đại Hành - CHIẾN TÍCH</div>
+        
+        <div style="color: var(--dark-red); font-weight: 700; text-transform: uppercase; font-size: 0.9rem;">
+            Ngô Quyền - CHIẾN TÍCH
+        </div>
+
         <div class="menu-toggle" onclick="toggleMenu()">
             <span></span><span></span><span></span>
         </div>
@@ -161,6 +168,7 @@
 
     <div class="menu-overlay" id="menuOverlay">
         <span class="close-menu" onclick="toggleMenu()">&times;</span>
+        
         <a href="../OVR/index.html" style="border-bottom: 2px solid var(--primary-gold); margin-bottom: 15px; color: var(--primary-gold);">Trang Chủ</a>
         
         <div class="menu-label">Lịch sử & Chiến Tích</div>
@@ -174,19 +182,17 @@
 
     <section class="hero">
         <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
-            <h1>HOÀNG ĐẾ LÊ ĐẠI HÀNH</h1>
+            <h1>ĐỨC VƯƠNG NGÔ QUYỀN</h1>
         </div>
     </section>
 
     <div class="container">
-        <h2 data-aos="fade-up">Phá Tống Bình Chiêm Năm 981</h2>
+        <h2 data-aos="fade-up">Đại Phá Quân Nam Hán Năm 938</h2>
         
-        <p class="main-p" data-aos="fade-up">
-            <strong>Lê Đại Hành</strong> (941–1005), tên thật Lê Hoàn, là vị hoàng đế sáng lập triều Nhà Tiền Lê. Xuất thân bình dân nhưng có tài thao lược, ông trở thành trụ cột quân sự dưới thời Đinh Tiên Hoàng. Năm 980, trước nguy cơ xâm lược của Nhà Tống, ông được suy tôn lên ngôi hoàng đế để lãnh đạo kháng chiến và củng cố nền độc lập của Đại Cồ Việt.
-        </p>
+        <p data-aos="fade-up">Ngô Quyền là vị anh hùng dân tộc đã mở ra thời kỳ độc lập cho Việt Nam sau hơn 1.000 năm Bắc thuộc. Năm 938, trước cuộc xâm lược của quân Nam Hán, ông đã lựa chọn Sông Bạch Đằng làm chiến địa và sử dụng chiến thuật cắm cọc gỗ dưới lòng sông kết hợp với thủy triều để tiêu diệt quân địch.</p>
         
-<div class="video-container" style="padding: 20px; text-align: center;">
-    <h3 style="color: var(--dark-red); margin-bottom: 15px; font-weight: 700;">Video Giới Thiệu</h3>
+<div class="video-container" style="padding: 20px; text-align: center; max-width: 800px; margin: auto;">
+    <h3 style="color: #8B0000; margin-bottom: 15px; font-weight: 700; font-family: sans-serif;">Video Giới Thiệu</h3>
     <style>
 .yt-thumb{
   position:relative;
@@ -209,43 +215,44 @@
 </style>
 
 <a class="yt-thumb"
-   href="https://www.youtube.com/watch?v=NLTKxiqClHQ"
+   href="https://www.youtube.com/watch?v=LlWefPvAyH0"
    target="_blank"
    rel="noopener">
-   <img src="https://img.youtube.com/vi/NLTKxiqClHQ/maxresdefault.jpg">
+   <img src="https://img.youtube.com/vi/LlWefPvAyH0/maxresdefault.jpg">
 </a>
-    <!--<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 15px; box-shadow: var(--shadow); background-color: #000;">
+    <!--<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); background-color: #000;">
         <video 
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" 
+            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: contain;" 
             controls 
             playsinline
-            preload="metadata">
-            <source src="https://www.dropbox.com/scl/fi/2t9n7vpt8fo30cwnog3fr/Tr-c-L-m-t.mp4?rlkey=huovvr3r5l6kinu8z5i16onur&st=3a6uol9c&raw=1" type="video/mp4">
+            preload="metadata"
+            poster="https://via.placeholder.com/800x450.png?text=Loading+Video...">
+            
+            <source src="https://www.dropbox.com/scl/fi/u1qjk7orwoam7lanm62x8/Ng-Quy-n.mp4?rlkey=0hp1ctse6oqgqd71qr91g58dd&st=wyh79fot&raw=1" type="video/mp4">
+            
             Trình duyệt của bạn không hỗ trợ xem video này.
         </video>
     </div>-->
 </div>
-        <p class="main-p" data-aos="fade-up">
-            Trong Chiến thắng Bạch Đằng năm 981, Lê Đại Hành đã vận dụng chiến thuật cắm cọc dưới lòng Sông Bạch Đằng, kết hợp với quy luật thủy triều để nhử và tiêu diệt quân Tống do Hầu Nhân Bảo chỉ huy. Chiến thắng này đã bảo vệ vững chắc nền độc lập của Đại Cồ Việt và khẳng định bản lĩnh lãnh đạo của vị vua mới lên ngôi.
-        </p>
+        <p data-aos="fade-up">Trong Trận Bạch Đằng năm 938, quân ta đã đánh bại hoàn toàn đội thủy quân do Lưu Hoằng Tháo chỉ huy. Chiến thắng này chấm dứt ách đô hộ của phương Bắc, mở ra kỷ nguyên độc lập lâu dài cho dân tộc. Năm 939, Ngô Quyền lên ngôi vua, đặt nền móng cho nhà nước tự chủ đầu tiên của người Việt.</p>
 
-        <div class="highlight-quote" data-aos="fade-left">
-            Ngày nay, tại Khu di tích Bạch Đằng Giang, đền thờ Lê Đại Hành được xây dựng nhằm tưởng nhớ công lao của vị hoàng đế anh minh, người đã góp phần giữ vững chủ quyền và phát triển đất nước trong buổi đầu độc lập.
+        <div class="highlight-box" data-aos="fade-left">
+            Ngày nay, tại Khu di tích Bạch Đằng Giang, đền thờ Ngô Quyền được xây dựng để tưởng nhớ công lao của vị vua anh hùng, đồng thời tôn vinh chiến thắng Bạch Đằng – biểu tượng bất diệt của trí tuệ và tinh thần quật cường của dân tộc Việt Nam.
         </div>
 
         <div class="stats-grid">
-            <a href="../NQ/NQ_WEB.html" class="stat-link" data-aos="fade-up">
+            <a href="../LDH/LDH_WEB.html" class="stat-link" data-aos="fade-up">
                 <div class="stat-item">
-                    <b>Năm 938</b>
-                    <small>Đức Vương Ngô Quyền</small>
-                    <div class="btn-detail">Đại phá quân Nam Hán →</div>
+                    <b>Năm 981</b>
+                    <small>Hoàng đế Lê Đại Hành</small>
+                    <div class="btn-detail">Xem chi tiết →</div>
                 </div>
             </a>
             <a href="../TQT/THT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="100">
                 <div class="stat-item">
                     <b>Năm 1288</b>
                     <small>Hưng Đạo Đại Vương</small>
-                    <div class="btn-detail">Tiêu diệt quân Nguyên Mông →</div>
+                    <div class="btn-detail">Xem chi tiết →</div>
                 </div>
             </a>
             <a href="../OVR/index.html" class="stat-link" data-aos="fade-up" data-aos-delay="200">
@@ -259,8 +266,11 @@
     </div>
 
     <div class="container" style="margin-top: 40px; padding-top: 20px;">
-        <div data-aos="fade-up"><h2>Kiến Trúc & Tâm Linh</h2></div>
-        <div class="stats-grid">
+        <div data-aos="fade-up">
+            <h2>Kiến Trúc & Tâm Linh</h2>
+        </div>
+
+        <div class="stats-grid arch-custom-grid">
             <a href="../SoV/SoV_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="100">
                 <div class="stat-item arch-card">
                     <div class="arch-icon">🏛️</div>
@@ -282,7 +292,7 @@
                     <div class="btn-detail">Xem chi tiết</div>
                 </div>
             </a>
-                        <a href="../TLT/TLT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="400">
+            <a href="../TLT/TLT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="400">
                 <div class="stat-item arch-card">
                     <div class="arch-icon">⛩️</div>
                     <b>Trúc Lâm Tự Tràng Kênh</b>
@@ -320,11 +330,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
-
+        
         function toggleMenu() {
             document.getElementById('menuOverlay').classList.toggle('active');
         }
 
+        // Đóng menu khi click ra ngoài
         document.addEventListener('click', function(event) {
             const menu = document.getElementById('menuOverlay');
             const btn = document.querySelector('.menu-toggle');
@@ -336,6 +347,8 @@
 </body>
 
 </html>
+
+
 
 
 
