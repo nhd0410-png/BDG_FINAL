@@ -186,15 +186,18 @@
 <div class="video-container" style="padding: 20px; text-align: center;">
     <h3 style="color: var(--dark-red); margin-bottom: 20px; font-weight: 700; font-size: 1.4rem;">Video Giới Thiệu</h3>
 
-    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); background-color: #1a1a1a;">
-        <iframe 
-            style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
-            src="https://www.youtube.com/embed/bSflmEWW0Y4" 
-            title="Chùa Trúc Lâm Tự Tràng Kênh" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-        </iframe>
-    </div>
+    <a href="https://youtu.be/bSflmEWW0Y4" target="_blank" style="text-decoration: none; display: block; position: relative; max-width: 600px; margin: 0 auto;">
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); background: url('https://img.youtube.com/vi/bSflmEWW0Y4/maxresdefault.jpg') no-repeat center center; background-size: cover;">
+            
+            <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.2);"></div>
+            
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 70px; height: 70px; background: rgba(255,0,0,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+                <div style="width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid white; margin-left: 5px;"></div>
+            </div>
+        </div>
+        <p style="margin-top: 15px; color: var(--dark-red); font-weight: 600;">Ấn để xem trên YouTube →</p>
+    </a>
+</div>
     
     <p style="margin-top: 15px;">
         <a href="https://youtu.be/bSflmEWW0Y4" target="_blank" style="color: var(--primary-gold); text-decoration: none; font-weight: 600; font-size: 0.9rem;">
@@ -271,6 +274,7 @@
     </script>
 </body>
 </html>
+
 
 
 
