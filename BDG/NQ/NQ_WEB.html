@@ -117,9 +117,6 @@
         
         p { margin-bottom: 20px; text-align: justify; }
 
-        .img-box { width: 100%; border-radius: 20px; overflow: hidden; margin: 35px 0; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .img-box img { width: 100%; display: block; }
-
         .highlight-box {
             background: #fffaf2;
             border-left: 5px solid var(--primary-gold);
@@ -140,8 +137,6 @@
         .stat-item small { color: #666; font-weight: 500; }
         .btn-detail { margin-top: 15px; color: var(--primary-gold); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
 
-        footer { text-align: center; padding: 50px 20px; background: #1a1a1a; color: #777; margin-top: 60px; }
-        
         .arch-custom-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; }
         .arch-card {
             padding: 25px 15px !important;
@@ -168,14 +163,11 @@
 
     <div class="menu-overlay" id="menuOverlay">
         <span class="close-menu" onclick="toggleMenu()">&times;</span>
-        
         <a href="../OVR/index.html" style="border-bottom: 2px solid var(--primary-gold); margin-bottom: 15px; color: var(--primary-gold);">Trang Chủ</a>
-        
         <div class="menu-label">Lịch sử & Chiến Tích</div>
         <a href="../NQ/NQ_WEB.html">• Đức Vương Ngô Quyền</a>
         <a href="../LDH/LDH_WEB.html">• Hoàng Đế Lê Đại Hành</a>
         <a href="../TQT/THT_WEB.html">• Hưng Đạo Đại Vương</a>
-
         <div class="menu-label">Không Gian Văn Hóa</div>
         <a href="../SoV/SoV_WEB.html">Kiến Trúc & Tâm Linh (Tất cả)</a>
     </div>
@@ -191,43 +183,32 @@
         
         <p data-aos="fade-up">Ngô Quyền là vị anh hùng dân tộc đã mở ra thời kỳ độc lập cho Việt Nam sau hơn 1.000 năm Bắc thuộc. Năm 938, trước cuộc xâm lược của quân Nam Hán, ông đã lựa chọn Sông Bạch Đằng làm chiến địa và sử dụng chiến thuật cắm cọc gỗ dưới lòng sông kết hợp với thủy triều để tiêu diệt quân địch.</p>
         
-<div class="video-container" style="padding: 20px; text-align: center; max-width: 800px; margin: auto;">
-    <h3 style="color: #8B0000; margin-bottom: 15px; font-weight: 700; font-family: sans-serif;">Video Giới Thiệu</h3>
-    <style>
-.yt-thumb{
-  position:relative;
-  display:inline-block;
-}
-.yt-thumb img{
-  width:100%;
-  border-radius:10px;
-}
-.yt-thumb::after{
-  content:"▶";
-  font-size:60px;
-  color:white;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-shadow:0 0 10px rgba(0,0,0,0.6);
-}
-</style>
+        <div class="video-container" style="padding: 20px; text-align: center;">
+            <h3 style="color: var(--dark-red); margin-bottom: 20px; font-weight: 700; font-size: 1.4rem;">Video Giới Thiệu</h3>
 
-<div class="video-container" style="padding: 20px; text-align: center;">
-    <h3 style="color: var(--dark-red); margin-bottom: 20px; font-weight: 700; font-size: 1.4rem;">Video Giới Thiệu</h3>
+            <a href="https://youtu.be/LlWefPvAyH0" target="_blank" style="text-decoration: none; display: block; position: relative; max-width: 650px; margin: 0 auto;">
+                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 20px; box-shadow: 0 12px 35px rgba(0,0,0,0.25); background: url('https://img.youtube.com/vi/LlWefPvAyH0/maxresdefault.jpg') no-repeat center center; background-size: cover; transform: translate3d(0,0,0);">
+                    
+                    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.25); transition: 0.3s;"></div>
+                    
+                    <div class="play-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 55px; background: rgba(255,0,0,0.9); border-radius: 12px; display: flex; align-items: center; justify-content: center; transition: 0.3s;">
+                        <div style="width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid white; margin-left: 5px;"></div>
+                    </div>
 
-    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); background-color: #1a1a1a; transform: translate3d(0,0,0);">
-        <video 
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" 
-            controls 
-            playsinline
-            preload="metadata">
-            <source src="https://www.dropbox.com/scl/fi/u1qjk7orwoam7lanm62x8/Ng-Quy-n.mp4?rlkey=0hp1ctse6oqgqd71qr91g58dd&st=r01u6nle&raw=1" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ xem video này.
-        </video>
-    </div>
-</div>
+                    <style>
+                        a:hover .play-button { 
+                            background: #ff0000 !important; 
+                            transform: translate(-50%, -50%) scale(1.1); 
+                            box-shadow: 0 0 30px rgba(255,0,0,0.5); 
+                        }
+                    </style>
+                </div>
+                <p style="margin-top: 15px; color: var(--dark-red); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                    🎬 Xem video trên YouTube →
+                </p>
+            </a>
+        </div>
+
         <p data-aos="fade-up">Trong Trận Bạch Đằng năm 938, quân ta đã đánh bại hoàn toàn đội thủy quân do Lưu Hoằng Tháo chỉ huy. Chiến thắng này chấm dứt ách đô hộ của phương Bắc, mở ra kỷ nguyên độc lập lâu dài cho dân tộc. Năm 939, Ngô Quyền lên ngôi vua, đặt nền móng cho nhà nước tự chủ đầu tiên của người Việt.</p>
 
         <div class="highlight-box" data-aos="fade-left">
@@ -303,24 +284,23 @@
         </div>
     </div>
 
-<div style="text-align: center; font-family: sans-serif; line-height: 1.6; color: #eee; background-color: #222; padding: 20px; border-radius: 8px;">
-    <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
-        Dự án Bạch Đằng Giang & Công Nghệ Số &copy; 2026
-    </p>
-    
-    <p style="font-size: 0.9rem; color: #00d4ff; margin-bottom: 15px;">
-        Nhóm: <strong>GIÁO SINH THPT TRẦN NGUYÊN HÃN - SP TIẾNG ANH 1 K25</strong>
-    </p>
-
-    <div style="font-size: 0.85rem; color: #ccc;">
-        <p><strong>Biên kịch:</strong> Đỗ Minh Ngọc</p>
-        <p><strong>Video Editor:</strong> Đỗ Phạm Mai Phương</p>
-        <p><strong>Âm thanh & Hình ảnh:</strong> Nguyễn Thị Thanh Tâm, Phạm Đoàn Duy Khánh</p>
-        <p><strong>Hậu cần:</strong> Ngô Thị Diễm Quỳnh</p>
-        <p><strong>Lập trình Web:</strong> Nguyễn Hữu Đức</p>
-        <p><strong>Lập trình & Thiết kế Đồ họa:</strong> Bùi Thị Minh Thư</p>
+    <div style="text-align: center; font-family: sans-serif; line-height: 1.6; color: #eee; background-color: #222; padding: 20px; border-radius: 8px;">
+        <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
+            Dự án Bạch Đằng Giang & Công Nghệ Số &copy; 2026
+        </p>
+        <p style="font-size: 0.9rem; color: #00d4ff; margin-bottom: 15px;">
+            Nhóm: <strong>GIÁO SINH THPT TRẦN NGUYÊN HÃN - SP TIẾNG ANH 1 K25</strong>
+        </p>
+        <div style="font-size: 0.85rem; color: #ccc;">
+            <p><strong>Biên kịch:</strong> Đỗ Minh Ngọc</p>
+            <p><strong>Video Editor:</strong> Đỗ Phạm Mai Phương</p>
+            <p><strong>Âm thanh & Hình ảnh:</strong> Nguyễn Thị Thanh Tâm, Phạm Đoàn Duy Khánh</p>
+            <p><strong>Hậu cần:</strong> Ngô Thị Diễm Quỳnh</p>
+            <p><strong>Lập trình Web:</strong> Nguyễn Hữu Đức</p>
+            <p><strong>Lập trình & Thiết kế Đồ họa:</strong> Bùi Thị Minh Thư</p>
+        </div>
     </div>
-</div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
@@ -329,7 +309,6 @@
             document.getElementById('menuOverlay').classList.toggle('active');
         }
 
-        // Đóng menu khi click ra ngoài
         document.addEventListener('click', function(event) {
             const menu = document.getElementById('menuOverlay');
             const btn = document.querySelector('.menu-toggle');
@@ -339,12 +318,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
