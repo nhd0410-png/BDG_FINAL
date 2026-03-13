@@ -167,16 +167,20 @@
             color: #555;
         }
 
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            margin: 40px 0;
-            background: #000;
+        /* --- YOUTUBE VIDEO STYLING --- */
+        .video-container { margin: 40px 0; text-align: center; }
+        .video-box { 
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; 
+            border-radius: 20px; box-shadow: 0 12px 35px rgba(0,0,0,0.15); background: #000; 
         }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        
+        .yt-link-btn {
+            display: inline-block; margin-top: 20px; padding: 12px 25px; background: var(--dark-red); color: white;
+            text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3); transition: 0.3s;
+        }
+        .yt-link-btn:hover { background: #b00000; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(139, 0, 0, 0.4); }
 
         /* --- GRID SYSTEM --- */
         .stats-grid {
@@ -255,10 +259,15 @@
             "Đây là quần thể văn hóa – lịch sử gắn với những chiến thắng vang dội trên sông Bạch Đằng và là nơi tưởng niệm các vị anh hùng dân tộc đã viết nên những trang sử vàng chói lọi."
         </div>
 
-        <div class="video-wrapper" data-aos="zoom-in">
-            <video style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" controls playsinline preload="metadata">
-                <source src="https://www.dropbox.com/scl/fi/fv2zwtsqkenvasju6vie7/T-ng-quan.mp4?rlkey=n1d91gn77xizdaau75dd9r2t6&st=rgmlr77y&raw=1" type="video/mp4">
-            </video>
+        <div class="video-container" data-aos="zoom-in">
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/EfRhJ8nTH1M" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
+            </div>
+            <a href="https://youtu.be/EfRhJ8nTH1M" target="_blank" class="yt-link-btn">
+                🎬 Xem trên YouTube →
+            </a>
         </div>
 
         <div data-aos="fade-up">
@@ -307,24 +316,24 @@
             Năm 2020, khu di tích đã chính thức được công nhận là <strong>Di tích lịch sử quốc gia</strong>.
         </div>
 
-<div style="text-align: center; font-family: sans-serif; line-height: 1.6; color: #eee; background-color: #222; padding: 20px; border-radius: 8px;">
-    <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
-        Dự án Bạch Đằng Giang & Công Nghệ Số &copy; 2026
-    </p>
-    
-    <p style="font-size: 0.9rem; color: #00d4ff; margin-bottom: 15px;">
-        Nhóm: <strong>GIÁO SINH THPT TRẦN NGUYÊN HÃN - SP TIẾNG ANH 1 K25</strong>
-    </p>
-
-    <div style="font-size: 0.85rem; color: #ccc;">
-        <p><strong>Biên kịch:</strong> Đỗ Minh Ngọc</p>
-        <p><strong>Video Editor:</strong> Đỗ Phạm Mai Phương</p>
-        <p><strong>Âm thanh & Hình ảnh:</strong> Nguyễn Thị Thanh Tâm, Phạm Đoàn Duy Khánh</p>
-        <p><strong>Hậu cần:</strong> Ngô Thị Diễm Quỳnh</p>
-        <p><strong>Lập trình Web:</strong> Nguyễn Hữu Đức</p>
-        <p><strong>Lập trình & Thiết kế Đồ họa:</strong> Bùi Thị Minh Thư</p>
+        <div style="text-align: center; font-family: sans-serif; line-height: 1.6; color: #eee; background-color: #222; padding: 20px; border-radius: 8px; margin-top: 40px;">
+            <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
+                Dự án Bạch Đằng Giang & Công Nghệ Số &copy; 2026
+            </p>
+            <p style="font-size: 0.9rem; color: #00d4ff; margin-bottom: 15px;">
+                Nhóm: <strong>GIÁO SINH THPT TRẦN NGUYÊN HÃN - SP TIẾNG ANH 1 K25</strong>
+            </p>
+            <div style="font-size: 0.85rem; color: #ccc;">
+                <p><strong>Biên kịch:</strong> Đỗ Minh Ngọc</p>
+                <p><strong>Video Editor:</strong> Đỗ Phạm Mai Phương</p>
+                <p><strong>Âm thanh & Hình ảnh:</strong> Nguyễn Thị Thanh Tâm, Phạm Đoàn Duy Khánh</p>
+                <p><strong>Hậu cần:</strong> Ngô Thị Diễm Quỳnh</p>
+                <p><strong>Lập trình Web:</strong> Nguyễn Hữu Đức</p>
+                <p><strong>Lập trình & Thiết kế Đồ họa:</strong> Bùi Thị Minh Thư</p>
+            </div>
+        </div>
     </div>
-</div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true, offset: 50 });
@@ -332,5 +341,3 @@
     </script>
 </body>
 </html>
-
-
