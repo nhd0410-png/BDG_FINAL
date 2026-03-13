@@ -28,7 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* --- MENU OVERLAY ĐỒNG BỘ --- */
+        /* --- MENU OVERLAY --- */
         .menu-overlay {
             position: fixed; 
             top: 0; 
@@ -118,10 +118,6 @@
         
         .main-p { margin-bottom: 25px; text-align: justify; color: #444; }
 
-        .img-box { width: 100%; max-width: 600px; border-radius: 20px; overflow: hidden; margin: 35px auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .img-box img { width: 100%; display: block; transition: 0.5s; }
-        .img-box:hover img { transform: scale(1.03); }
-
         .highlight-quote { font-style: italic; border-left: 5px solid var(--dark-red); padding: 25px; background: #fffaf2; margin: 30px 0; border-radius: 0 15px 15px 0; line-height: 1.8; color: #555; }
 
         /* --- STATS GRID --- */
@@ -145,8 +141,16 @@
         .arch-icon { font-size: 2rem; margin-bottom: 15px; filter: sepia(1) saturate(2); }
         .arch-card:hover { background: #fffaf0 !important; border-color: var(--primary-gold) !important; }
 
+        /* YouTube Preview Style */
+        .play-button { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            width: 70px; height: 50px; background: rgba(255,0,0,0.9); border-radius: 12px; 
+            display: flex; align-items: center; justify-content: center; transition: 0.3s; 
+        }
+        .play-button::after { content: ""; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-left: 18px solid white; margin-left: 5px; }
+        .video-link:hover .play-button { background: #ff0000; transform: translate(-50%, -50%) scale(1.1); box-shadow: 0 0 20px rgba(255,0,0,0.4); }
+
         footer { text-align: center; padding: 60px 20px; background: #1a1a1a; color: #999; margin-top: 60px; }
-        
         @media (max-width: 768px) { .hero-content h1 { font-size: 1.8rem; } .container { padding: 30px 20px; } }
     </style>
 </head>
@@ -185,44 +189,18 @@
             <strong>Lê Đại Hành</strong> (941–1005), tên thật Lê Hoàn, là vị hoàng đế sáng lập triều Nhà Tiền Lê. Xuất thân bình dân nhưng có tài thao lược, ông trở thành trụ cột quân sự dưới thời Đinh Tiên Hoàng. Năm 980, trước nguy cơ xâm lược của Nhà Tống, ông được suy tôn lên ngôi hoàng đế để lãnh đạo kháng chiến và củng cố nền độc lập của Đại Cồ Việt.
         </p>
         
-<div class="video-container" style="padding: 20px; text-align: center;">
-    <h3 style="color: var(--dark-red); margin-bottom: 15px; font-weight: 700;">Video Giới Thiệu</h3>
-    <style>
-.yt-thumb{
-  position:relative;
-  display:inline-block;
-}
-.yt-thumb img{
-  width:100%;
-  border-radius:10px;
-}
-.yt-thumb::after{
-  content:"▶";
-  font-size:60px;
-  color:white;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-shadow:0 0 10px rgba(0,0,0,0.6);
-}
-</style>
+        <div class="video-container" style="padding: 20px; text-align: center;">
+            <h3 style="color: var(--dark-red); margin-bottom: 20px; font-weight: 700; font-size: 1.4rem;">Video Giới Thiệu</h3>
+            
+            <a href="https://youtu.be/NLTKxiqClHQ" target="_blank" class="video-link" style="text-decoration: none; display: block; position: relative; max-width: 700px; margin: 0 auto;">
+                <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); background: url('https://img.youtube.com/vi/NLTKxiqClHQ/maxresdefault.jpg') center/cover; transform: translate3d(0,0,0);">
+                    <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.15);"></div>
+                    <div class="play-button"></div>
+                </div>
+                <p style="margin-top: 15px; color: var(--primary-gold); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Xem video trên YouTube →</p>
+            </a>
+        </div>
 
-
-<div class="video-container" style="padding: 20px; text-align: center;">
-    <h3 style="color: var(--dark-red); margin-bottom: 20px; font-weight: 700; font-size: 1.4rem;">Video Giới Thiệu</h3>
-
-    <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); background-color: #1a1a1a; transform: translate3d(0,0,0);">
-        <video 
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" 
-            controls 
-            playsinline
-            preload="metadata">
-            <source src="https://www.dropbox.com/scl/fi/qvm1kgu7obzl1jh9kwurs/L-i-h-nh.mp4?rlkey=y4pms2ibh1thlppvzrdqjqdmf&st=uee2azhu&raw=1" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ xem video này.
-        </video>
-    </div>
-</div>
         <p class="main-p" data-aos="fade-up">
             Trong Chiến thắng Bạch Đằng năm 981, Lê Đại Hành đã vận dụng chiến thuật cắm cọc dưới lòng Sông Bạch Đằng, kết hợp với quy luật thủy triều để nhử và tiêu diệt quân Tống do Hầu Nhân Bảo chỉ huy. Chiến thắng này đã bảo vệ vững chắc nền độc lập của Đại Cồ Việt và khẳng định bản lĩnh lãnh đạo của vị vua mới lên ngôi.
         </p>
@@ -280,7 +258,7 @@
                     <div class="btn-detail">Xem chi tiết</div>
                 </div>
             </a>
-                        <a href="../TLT/TLT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="400">
+            <a href="../TLT/TLT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="400">
                 <div class="stat-item arch-card">
                     <div class="arch-icon">⛩️</div>
                     <b>Trúc Lâm Tự Tràng Kênh</b>
@@ -297,24 +275,23 @@
         </div>
     </div>
 
-<div style="text-align: center; font-family: sans-serif; line-height: 1.6; color: #eee; background-color: #222; padding: 20px; border-radius: 8px;">
-    <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
-        Dự án Bạch Đằng Giang & Công Nghệ Số &copy; 2026
-    </p>
-    
-    <p style="font-size: 0.9rem; color: #00d4ff; margin-bottom: 15px;">
-        Nhóm: <strong>GIÁO SINH THPT TRẦN NGUYÊN HÃN - SP TIẾNG ANH 1 K25</strong>
-    </p>
-
-    <div style="font-size: 0.85rem; color: #ccc;">
-        <p><strong>Biên kịch:</strong> Đỗ Minh Ngọc</p>
-        <p><strong>Video Editor:</strong> Đỗ Phạm Mai Phương</p>
-        <p><strong>Âm thanh & Hình ảnh:</strong> Nguyễn Thị Thanh Tâm, Phạm Đoàn Duy Khánh</p>
-        <p><strong>Hậu cần:</strong> Ngô Thị Diễm Quỳnh</p>
-        <p><strong>Lập trình Web:</strong> Nguyễn Hữu Đức</p>
-        <p><strong>Lập trình & Thiết kế Đồ họa:</strong> Bùi Thị Minh Thư</p>
+    <div style="text-align: center; font-family: sans-serif; line-height: 1.6; color: #eee; background-color: #222; padding: 20px; border-radius: 8px;">
+        <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
+            Dự án Bạch Đằng Giang & Công Nghệ Số &copy; 2026
+        </p>
+        <p style="font-size: 0.9rem; color: #00d4ff; margin-bottom: 15px;">
+            Nhóm: <strong>GIÁO SINH THPT TRẦN NGUYÊN HÃN - SP TIẾNG ANH 1 K25</strong>
+        </p>
+        <div style="font-size: 0.85rem; color: #ccc;">
+            <p><strong>Biên kịch:</strong> Đỗ Minh Ngọc</p>
+            <p><strong>Video Editor:</strong> Đỗ Phạm Mai Phương</p>
+            <p><strong>Âm thanh & Hình ảnh:</strong> Nguyễn Thị Thanh Tâm, Phạm Đoàn Duy Khánh</p>
+            <p><strong>Hậu cần:</strong> Ngô Thị Diễm Quỳnh</p>
+            <p><strong>Lập trình Web:</strong> Nguyễn Hữu Đức</p>
+            <p><strong>Lập trình & Thiết kế Đồ họa:</strong> Bùi Thị Minh Thư</p>
+        </div>
     </div>
-</div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
@@ -332,10 +309,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
