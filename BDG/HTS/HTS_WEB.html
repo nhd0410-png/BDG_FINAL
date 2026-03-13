@@ -1,235 +1,227 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bia Hịch Tướng Sĩ - Bạch Đằng Giang</title>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-gold: #c5a059;
-            --dark-red: #8b0000;
-            --bg-color: #fdfbf7;
-            --text-color: #2d2d2d;
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Bia Hịch Tướng Sĩ - Bạch Đằng Giang</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        * { box-sizing: border-box; transition: all 0.3s ease; }
+<style>
+:root {
+--primary-gold: #c5a059;
+--dark-red: #8b0000;
+--bg-color: #fdfbf7;
+--text-color: #2d2d2d;
+--white: #ffffff;
+--shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
 
-        body {
-            margin: 0;
-            font-family: 'Be Vietnam Pro', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+* { box-sizing: border-box; transition: all 0.3s ease; }
 
-        /* --- HEADER --- */
-        .header-nav {
-            position: fixed; top: 0; left: 0; width: 100%; padding: 12px 20px;
-            display: flex; justify-content: space-between; align-items: center; z-index: 2000;
-            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); 
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-        }
-        .logo-fixed { width: 45px; height: 45px; border-radius: 50%; overflow: hidden; border: 2px solid var(--primary-gold); background: white; }
-        .logo-fixed img { width: 100%; height: 100%; object-fit: contain; }
+body {
+margin: 0;
+font-family: 'Be Vietnam Pro', sans-serif;
+background-color: var(--bg-color);
+color: var(--text-color);
+line-height: 1.7;
+overflow-x: hidden;
+}
 
-        .menu-toggle {
-            cursor: pointer; width: 40px; height: 40px; background-color: var(--dark-red);
-            border-radius: 8px; display: flex; flex-direction: column; justify-content: center;
-            align-items: center; gap: 5px; transition: all 0.3s ease; border: 1px solid rgba(197, 160, 89, 0.3); z-index: 2001;
-        }
-        .menu-toggle span { display: block; width: 22px; height: 2px; background-color: var(--primary-gold); border-radius: 2px; transition: 0.3s; }
-        
-        /* Menu Overlay đỏ */
-        .menu-overlay {
-            position: fixed; top: 0; right: -100%; width: 100%; max-width: 300px; height: 100vh;
-            background: var(--dark-red); z-index: 3000; padding: 60px 25px; display: flex;
-            flex-direction: column; box-shadow: -10px 0 30px rgba(0,0,0,0.3); transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-        }
-        .menu-overlay.active { right: 0; }
-        .close-menu { align-self: flex-end; color: white; font-size: 2.5rem; cursor: pointer; margin-bottom: 20px; }
-        .menu-label { color: var(--primary-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin: 20px 0 10px; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding-bottom: 5px; font-weight: 700; }
-        .menu-overlay a { color: white; text-decoration: none; padding: 12px 0; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .menu-overlay a:hover { color: var(--primary-gold); padding-left: 8px; }
+/* --- HEADER --- */
+.header-nav {
+position: fixed; top: 0; left: 0; width: 100%; padding: 12px 20px;
+display: flex; justify-content: space-between; align-items: center; z-index: 2000;
+background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px); 
+border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+.logo-fixed { width: 45px; height: 45px; border-radius: 50%; overflow: hidden; border: 2px solid var(--primary-gold); background: white; }
+.logo-fixed img { width: 100%; height: 100%; object-fit: contain; }
 
-        /* --- HERO --- */
-        .hero {
-            height: 50vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../OVR/gate2.png') no-repeat center center;
-            background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; color: white;
-        }
-        .hero-content h1 {
-            font-size: 2.8rem; text-transform: uppercase; letter-spacing: 5px; font-weight: 700;
-            background: linear-gradient(to right, #fff 20%, var(--primary-gold) 40%, var(--primary-gold) 60%, #fff 80%);
-            background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: shine 3s linear infinite; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
-        }
-        @keyframes shine { to { background-position: 200% center; } }
+.menu-toggle {
+cursor: pointer; width: 40px; height: 40px; background-color: var(--dark-red);
+border-radius: 8px; display: flex; flex-direction: column; justify-content: center;
+align-items: center; gap: 5px; transition: all 0.3s ease; border: 1px solid rgba(197, 160, 89, 0.3); z-index: 2001;
+}
+.menu-toggle span { display: block; width: 22px; height: 2px; background-color: var(--primary-gold); border-radius: 2px; transition: 0.3s; }
 
-        /* --- CONTAINER --- */
-        .container {
-            max-width: 900px; margin: -50px auto 0; background: var(--white);
-            padding: 50px 30px; border-radius: 30px 30px 0 0; box-shadow: var(--shadow); position: relative; z-index: 100;
-        }
-        h2 { color: var(--dark-red); text-align: center; text-transform: uppercase; margin-bottom: 30px; font-weight: 700; }
-        h2::after { content: ""; display: block; width: 60px; height: 3px; background: var(--primary-gold); margin: 12px auto; }
-        .main-p { margin-bottom: 25px; text-align: justify; color: #444; }
-        .highlight-box { background: #f9f4eb; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 30px 0; border-radius: 0 15px 15px 0; }
-        .img-box { width: 100%; max-width: 750px; border-radius: 20px; overflow: hidden; margin: 35px auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .img-box img { width: 100%; display: block; transition: 0.5s; }
-        .img-box:hover img { transform: scale(1.03); }
+/* Menu Overlay đỏ */
+.menu-overlay {
+position: fixed; top: 0; right: -100%; width: 100%; max-width: 300px; height: 100vh;
+background: var(--dark-red); z-index: 3000; padding: 60px 25px; display: flex;
+flex-direction: column; box-shadow: -10px 0 30px rgba(0,0,0,0.3); transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+.menu-overlay.active { right: 0; }
+.close-menu { align-self: flex-end; color: white; font-size: 2.5rem; cursor: pointer; margin-bottom: 20px; }
+.menu-label { color: var(--primary-gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin: 20px 0 10px; border-bottom: 1px solid rgba(197, 160, 89, 0.3); padding-bottom: 5px; font-weight: 700; }
+.menu-overlay a { color: white; text-decoration: none; padding: 12px 0; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.menu-overlay a:hover { color: var(--primary-gold); padding-left: 8px; }
 
-        /* --- NÚT ĐIỀU HƯỚNG --- */
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 50px; }
-        .stat-link { text-decoration: none; color: inherit; }
-        .stat-item {
-            background: #fff; padding: 25px 15px; border-radius: 20px; text-align: center; border: 1px solid #eee;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03); height: 100%; display: flex; flex-direction: column; justify-content: center;
-        }
-        .stat-item:hover { transform: translateY(-10px); border-color: var(--primary-gold); box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15); }
-        .stat-item b { display: block; color: var(--dark-red); font-size: 1.1rem; margin-bottom: 5px; }
-        .btn-detail { margin-top: 10px; color: var(--primary-gold); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+/* --- HERO --- */
+.hero {
+height: 50vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('../OVR/gate2.png') no-repeat center center;
+background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+}
+.hero-content h1 {
+font-size: 2.8rem; text-transform: uppercase; letter-spacing: 5px; font-weight: 700;
+background: linear-gradient(to right, #fff 20%, var(--primary-gold) 40%, var(--primary-gold) 60%, #fff 80%);
+background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+animation: shine 3s linear infinite; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+}
+@keyframes shine { to { background-position: 200% center; } }
 
-        .arch-card { padding: 25px 15px !important; background: linear-gradient(to bottom, #ffffff, #fffcf7); border: 1px solid rgba(197, 160, 89, 0.2) !important; }
-        .arch-card b { font-size: 1.1rem !important; min-height: 50px; display: flex; align-items: center; justify-content: center; }
-        .arch-icon { font-size: 2rem; margin-bottom: 15px; filter: sepia(1) saturate(2); }
-        .arch-card:hover { background: #fffaf0 !important; border-color: var(--primary-gold) !important; }
+/* --- CONTAINER --- */
+.container {
+max-width: 900px; margin: -50px auto 0; background: var(--white);
+padding: 50px 30px; border-radius: 30px 30px 0 0; box-shadow: var(--shadow); position: relative; z-index: 100;
+}
+h2 { color: var(--dark-red); text-align: center; text-transform: uppercase; margin-bottom: 30px; font-weight: 700; }
+h2::after { content: ""; display: block; width: 60px; height: 3px; background: var(--primary-gold); margin: 12px auto; }
+.main-p { margin-bottom: 25px; text-align: justify; color: #444; }
+.highlight-box { background: #f9f4eb; border-left: 5px solid var(--primary-gold); padding: 20px; margin: 30px 0; border-radius: 0 15px 15px 0; }
+.img-box { width: 100%; max-width: 750px; border-radius: 20px; overflow: hidden; margin: 35px auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.img-box img { width: 100%; display: block; transition: 0.5s; }
+.img-box:hover img { transform: scale(1.03); }
 
-        footer { text-align: center; padding: 60px 20px; background: #1a1a1a; color: #999; margin-top: 60px; }
-        @media (max-width: 768px) { .hero-content h1 { font-size: 1.8rem; } .container { padding: 30px 20px; } }
-    </style>
+/* --- NÚT ĐIỀU HƯỚNG --- */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 50px; }
+.stat-link { text-decoration: none; color: inherit; }
+.stat-item {
+background: #fff; padding: 25px 15px; border-radius: 20px; text-align: center; border: 1px solid #eee;
+box-shadow: 0 5px 15px rgba(0,0,0,0.03); height: 100%; display: flex; flex-direction: column; justify-content: center;
+}
+.stat-item:hover { transform: translateY(-10px); border-color: var(--primary-gold); box-shadow: 0 20px 40px rgba(197, 160, 89, 0.15); }
+.stat-item b { display: block; color: var(--dark-red); font-size: 1.1rem; margin-bottom: 5px; }
+.btn-detail { margin-top: 10px; color: var(--primary-gold); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+
+.arch-card { padding: 25px 15px !important; background: linear-gradient(to bottom, #ffffff, #fffcf7); border: 1px solid rgba(197, 160, 89, 0.2) !important; }
+.arch-card b { font-size: 1.1rem !important; min-height: 50px; display: flex; align-items: center; justify-content: center; }
+.arch-icon { font-size: 2rem; margin-bottom: 15px; filter: sepia(1) saturate(2); }
+.arch-card:hover { background: #fffaf0 !important; border-color: var(--primary-gold) !important; }
+
+footer { text-align: center; padding: 60px 20px; background: #1a1a1a; color: #999; margin-top: 60px; }
+@media (max-width: 768px) { .hero-content h1 { font-size: 1.8rem; } .container { padding: 30px 20px; } }
+</style>
 </head>
 <body>
-    <nav class="header-nav">
-        <div class="logo-fixed"><img src="../OVR/LOGO.png" alt="Logo"></div>
-        <div style="color: var(--dark-red); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">HTS_WEB - HỊCH TƯỚNG SĨ</div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
+<nav class="header-nav">
+<div class="logo-fixed"><img src="../OVR/LOGO.png" alt="Logo"></div>
+<div style="color: var(--dark-red); font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">HTS_WEB - HỊCH TƯỚNG SĨ</div>
+<div class="menu-toggle" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</div>
+</nav>
 
-    <div class="menu-overlay" id="menuOverlay">
-        <span class="close-menu" onclick="toggleMenu()">&times;</span>
-        <a href="../OVR/index.html">Trang Chủ</a>
-        <div class="menu-label">Lịch sử & Chiến Tích</div>
-        <a href="../NQ/NQ_WEB.html">Ba vị Anh hùng Dân tộc</a>
-        <div class="menu-label">Kiến trúc & Tâm linh</div>
-        <a href="../SoV/SoV_WEB.html">Quảng trường Chiến thắng</a>
-        <a href="../HCM/HCM_WEB.html">Đền thờ Hồ Chí Minh</a>
-        <a href="../Mau/Mau_WEB.html">Đền thờ Mẫu</a>
-        <a href="../TLT/TLT_WEB.html">Trúc Lâm Tự Tràng Kênh</a>
-        <a href="../HTS/HTS_WEB.html">Bia Hịch Tướng Sĩ</a>
-    </div>
+<div class="menu-overlay" id="menuOverlay">
+<span class="close-menu" onclick="toggleMenu()">&times;</span>
+<a href="../OVR/index.html">Trang Chủ</a>
+<div class="menu-label">Lịch sử & Chiến Tích</div>
+<a href="../NQ/NQ_WEB.html">Ba vị Anh hùng Dân tộc</a>
+<div class="menu-label">Kiến trúc & Tâm linh</div>
+<a href="../SoV/SoV_WEB.html">Quảng trường Chiến thắng</a>
+<a href="../HCM/HCM_WEB.html">Đền thờ Hồ Chí Minh</a>
+<a href="../Mau/Mau_WEB.html">Đền thờ Mẫu</a>
+<a href="../TLT/TLT_WEB.html">Trúc Lâm Tự Tràng Kênh</a>
+<a href="../HTS/HTS_WEB.html">Bia Hịch Tướng Sĩ</a>
+</div>
 
-    <section class="hero">
-        <div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
-            <h1>BIA HỊCH TƯỚNG SĨ</h1>
-        </div>
-    </section>
+<section class="hero">
+<div class="hero-content" data-aos="zoom-out" data-aos-duration="1500">
+<h1>BIA HỊCH TƯỚNG SĨ</h1>
+</div>
+</section>
 
-    <div class="container">
-        <h2 data-aos="fade-up">Lời Sông Núi Tạc Vào Đá Núi</h2>
-        
-        <p class="main-p" data-aos="fade-up">
-            Nằm trong quần thể di tích linh thiêng, <strong>Bia Hịch Tướng Sĩ</strong> hiện hữu như một biểu tượng của ý chí tự cường và sức mạnh đại đoàn kết dân tộc. Tấm bia được chế tác từ khối đá xanh nguyên khối khổng lồ, sừng sững giữa đất trời.
-        </p>
-        
-        <div class="highlight-box" data-aos="fade-left">
-            Mặt bia khắc trang trọng toàn bộ bản tuyên ngôn bất hủ của <b>Hưng Đạo Vương Trần Quốc Tuấn</b>. Những nét chữ Hán Nôm được chạm khắc tinh xảo, rồng bay phượng múa, tái hiện hào khí Đông A oanh liệt.
-        </div>
+<div class="container">
+<h2 data-aos="fade-up">Lời Sông Núi Tạc Vào Đá Núi</h2>
+
+<p class="main-p" data-aos="fade-up">
+Nằm trong quần thể di tích linh thiêng, <strong>Bia Hịch Tướng Sĩ</strong> hiện hữu như một biểu tượng của ý chí tự cường và sức mạnh đại đoàn kết dân tộc. Tấm bia được chế tác từ khối đá xanh nguyên khối khổng lồ, sừng sững giữa đất trời.
+</p>
+
+<div class="highlight-box" data-aos="fade-left">
+Mặt bia khắc trang trọng toàn bộ bản tuyên ngôn bất hủ của <b>Hưng Đạo Vương Trần Quốc Tuấn</b>. Những nét chữ Hán Nôm được chạm khắc tinh xảo, rồng bay phượng múa, tái hiện hào khí Đông A oanh liệt.
+</div>
 
 <div class="video-container" style="padding: 20px; text-align: center;">
-    <h3 style="color: var(--dark-red); margin-bottom: 20px; font-weight: 700; font-size: 1.4rem;">Video Giới Thiệu</h3>
-     <style>
-.yt-thumb{
-  position:relative;
-  display:inline-block;
-}
-.yt-thumb img{
-  width:100%;
-  border-radius:10px;
-}
-.yt-thumb::after{
-  content:"▶";
-  font-size:60px;
-  color:white;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-shadow:0 0 10px rgba(0,0,0,0.6);
-}
-</style>
+<h3 style="color: var(--dark-red); margin-bottom: 20px; font-weight: 700; font-size: 1.4rem;">Video Giới Thiệu</h3>
 
-<a class="yt-thumb"
-   href="https://www.youtube.com/watch?v=7KhtNpsjMxc"
-   target="_blank"
-   rel="noopener">
-   <img src="https://img.youtube.com/vi/7KhtNpsjMxc/maxresdefault.jpg">
-</a>
-    <!--<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); background-color: #1a1a1a; transform: translate3d(0,0,0);">
-        <video 
-            style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; cursor: pointer;" 
-            controls 
-            playsinline
-            webkit-playsinline
-            preload="none"
-            loading="lazy"
-            title="Video Giới Thiệu Hịch Tướng Sĩ">
-            <source src="https://www.dropbox.com/scl/fi/ifrmtdt7w666p14pqs46p/H-ch-t-ng-s.mp4?rlkey=yn3sfs8d9a7p0c5j5tat0gq6x&st=yfbnaukf&raw=1" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ xem video này.
-        </video>
-    </div>-->
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); background-color: #1a1a1a; transform: translate3d(0,0,0);">
+<video 
+style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; cursor: pointer;" 
+controls 
+playsinline
+webkit-playsinline
+preload="none"
+loading="lazy"
+title="Video Giới Thiệu Hịch Tướng Sĩ">
+<source src="https://www.dropbox.com/scl/fi/ifrmtdt7w666p14pqs46p/H-ch-t-ng-s.mp4?rlkey=yn3sfs8d9a7p0c5j5tat0gq6x&st=yfbnaukf&raw=1" type="video/mp4">
+Trình duyệt của bạn không hỗ trợ xem video này.
+</video>
 </div>
-        <p class="main-p" data-aos="fade-up">
-            Mỗi dòng chữ trên bia không chỉ là lời hiệu triệu quân sĩ mà còn là tiếng lòng của một vị chủ tướng tận trung với nước. Đứng trước tấm bia bên dòng sông lịch sử, du khách như nghe thấy tiếng vọng của lời thề <b>"Sát Thát"</b> vang động cả một khúc sông Bạch Đằng cuồn cuộn.
-        </p>
+</div>
+<p class="main-p" data-aos="fade-up">
+Mỗi dòng chữ trên bia không chỉ là lời hiệu triệu quân sĩ mà còn là tiếng lòng của một vị chủ tướng tận trung với nước. Đứng trước tấm bia bên dòng sông lịch sử, du khách như nghe thấy tiếng vọng của lời thề <b>"Sát Thát"</b> vang động cả một khúc sông Bạch Đằng cuồn cuộn.
+</p>
 
-        <p class="main-p" data-aos="fade-up">
-            Bia được đặt trên bệ đá vững chãi, xung quanh là những hàng tùng, hàng trúc xanh mướt. Đây chính là điểm tựa tinh thần, là nơi kết nối giữa quá khứ hào hùng và khát vọng hòa bình của thế hệ mai sau, làm rạng rỡ thêm linh khí của vùng đất cửa biển lịch sử.
-        </p>
+<p class="main-p" data-aos="fade-up">
+Bia được đặt trên bệ đá vững chãi, xung quanh là những hàng tùng, hàng trúc xanh mướt. Đây chính là điểm tựa tinh thần, là nơi kết nối giữa quá khứ hào hùng và khát vọng hòa bình của thế hệ mai sau, làm rạng rỡ thêm linh khí của vùng đất cửa biển lịch sử.
+</p>
 
-        <div class="stats-grid">
-            <a href="../NQ/NQ_WEB.html" class="stat-link" data-aos="fade-up">
-                <div class="stat-item"><b>Ngô Quyền</b><div class="btn-detail">Chi tiết →</div></div>
-            </a>
-            <a href="../LDH/LDH_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="100">
-                <div class="stat-item"><b>Lê Đại Hành</b><div class="btn-detail">Chi tiết →</div></div>
-            </a>
-            <a href="../TQT/THT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="200">
-                <div class="stat-item"><b>Trần Hưng Đạo</b><div class="btn-detail">Chi tiết →</div></div>
-            </a>
-            <a href="../OVR/index.html" class="stat-link" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-item"><b>Trang Chủ</b><div class="btn-detail">Quay lại →</div></div>
-            </a>
-        </div>
+<div class="stats-grid">
+<a href="../NQ/NQ_WEB.html" class="stat-link" data-aos="fade-up">
+<div class="stat-item"><b>Ngô Quyền</b><div class="btn-detail">Chi tiết →</div></div>
+</a>
+<a href="../LDH/LDH_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="100">
+<div class="stat-item"><b>Lê Đại Hành</b><div class="btn-detail">Chi tiết →</div></div>
+</a>
+<a href="../TQT/THT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="200">
+<div class="stat-item"><b>Trần Hưng Đạo</b><div class="btn-detail">Chi tiết →</div></div>
+</a>
+<a href="../OVR/index.html" class="stat-link" data-aos="fade-up" data-aos-delay="300">
+<div class="stat-item"><b>Trang Chủ</b><div class="btn-detail">Quay lại →</div></div>
+</a>
+</div>
+</div>
+
+<div class="container" style="margin-top: 40px; padding-top: 20px;">
+<div data-aos="fade-up"><h2>Kiến Trúc & Tâm Linh</h2></div>
+<div class="stats-grid">
+<a href="../SoV/SoV_WEB.html" class="stat-link" data-aos="fade-up"><div class="stat-item arch-card"><div class="arch-icon">🏛️</div><b>Quảng trường chiến thắng</b><div class="btn-detail">Xem chi tiết</div></div></a>
+<a href="../HCM/HCM_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="100"><div class="stat-item arch-card"><div class="arch-icon">🇻🇳</div><b>Đền thờ Hồ Chí Minh</b><div class="btn-detail">Xem chi tiết</div></div></a>
+<a href="../Mau/Mau_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="200"><div class="stat-item arch-card"><div class="arch-icon">🌸</div><b>Đền thờ Mẫu</b><div class="btn-detail">Xem chi tiết</div></div></a>
+<a href="../TLT/TLT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="300"><div class="stat-item arch-card"><div class="arch-icon">⛩️</div><b>Trúc Lâm Tự Tràng Kênh</b><div class="btn-detail">Xem chi tiết</div></div></a>
+<a href="../HTS/HTS_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="400"><div class="stat-item arch-card"><div class="arch-icon">📜</div><b>Bia Hịch Tướng Sĩ</b><div class="btn-detail">Xem chi tiết</div></div></a>
+</div>
+</div>
+
+    <footer>
+        <div style="text-align: center; font-family: sans-serif; line-height: 1.6; color: #eee; background-color: #222; padding: 20px; border-radius: 8px;">
+    <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">
+        Dự án Bạch Đằng Giang & Công Nghệ Số &copy; 2026
+    </p>
+    
+    <p style="font-size: 0.9rem; color: #00d4ff; margin-bottom: 15px;">
+        Nhóm: <strong>GIÁO SINH THPT TRẦN NGUYÊN HÃN - SP TIẾNG ANH 1 K25</strong>
+    </p>
+
+    <div style="font-size: 0.85rem; color: #ccc;">
+        <p><strong>Biên kịch:</strong> Đỗ Minh Ngọc</p>
+        <p><strong>Video Editor:</strong> Đỗ Phạm Mai Phương</p>
+        <p><strong>Âm thanh & Hình ảnh:</strong> Nguyễn Thị Thanh Tâm, Phạm Đoàn Duy Khánh</p>
+        <p><strong>Hậu cần:</strong> Ngô Thị Diễm Quỳnh</p>
+        <p><strong>Lập trình Web:</strong> Nguyễn Hữu Đức</p>
+        <p><strong>Lập trình & Thiết kế Đồ họa:</strong> Bùi Thị Minh Thư</p>
     </div>
-
-    <div class="container" style="margin-top: 40px; padding-top: 20px;">
-        <div data-aos="fade-up"><h2>Kiến Trúc & Tâm Linh</h2></div>
-        <div class="stats-grid">
-            <a href="../SoV/SoV_WEB.html" class="stat-link" data-aos="fade-up"><div class="stat-item arch-card"><div class="arch-icon">🏛️</div><b>Quảng trường chiến thắng</b><div class="btn-detail">Xem chi tiết</div></div></a>
-            <a href="../HCM/HCM_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="100"><div class="stat-item arch-card"><div class="arch-icon">🇻🇳</div><b>Đền thờ Hồ Chí Minh</b><div class="btn-detail">Xem chi tiết</div></div></a>
-            <a href="../Mau/Mau_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="200"><div class="stat-item arch-card"><div class="arch-icon">🌸</div><b>Đền thờ Mẫu</b><div class="btn-detail">Xem chi tiết</div></div></a>
-            <a href="../TLT/TLT_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="300"><div class="stat-item arch-card"><div class="arch-icon">⛩️</div><b>Trúc Lâm Tự Tràng Kênh</b><div class="btn-detail">Xem chi tiết</div></div></a>
-            <a href="../HTS/HTS_WEB.html" class="stat-link" data-aos="fade-up" data-aos-delay="400"><div class="stat-item arch-card"><div class="arch-icon">📜</div><b>Bia Hịch Tướng Sĩ</b><div class="btn-detail">Xem chi tiết</div></div></a>
-        </div>
-    </div>
-
+</div>
 https://nhd0410-png.github.io/BDG_FINAL/BDG/HTS/HTS_WEB.html
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-        function toggleMenu() { document.getElementById('menuOverlay').classList.toggle('active'); }
-    </script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1000, once: true });
+function toggleMenu() { document.getElementById('menuOverlay').classList.toggle('active'); }
+</script>
 </body>
 
 </html>
-
 
 
 
